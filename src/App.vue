@@ -1,17 +1,18 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="map">
+      <Hero :x=2 :y=3 />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Hero from './components/Hero.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Hero
   }
 }
 </script>
@@ -24,5 +25,20 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.map {
+  display: grid;
+  grid-template-columns: repeat(9, 2rem);
+  grid-template-rows: repeat(9, 2rem);
+  align-items: center;
+  justify-items: center;
+  border: 2px solid black;
+  width: max-content;
+  margin: 0 auto;
+  background: 
+    repeating-linear-gradient(to right, transparent  0rem 1.9rem, black 1.9rem 2rem),
+    repeating-linear-gradient(to top, transparent  0rem 1.9rem, black 1.9rem 2rem)
+  ;
 }
 </style>
